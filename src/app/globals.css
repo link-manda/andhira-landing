@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand Colors */
+  --color-primary: #0B3C5D;
+  --color-primary-light: #1a5276;
+  --color-primary-dark: #072b44;
+  --color-secondary: #00A8A8;
+  --color-secondary-light: #00c4c4;
+  --color-secondary-dark: #007a7a;
+  --color-accent: #4FC3F7;
+  --color-accent-light: #81d4fa;
+  --color-accent-dark: #0288d1;
+
+  /* Neutral */
+  --color-surface: #f8fafc;
+  --color-surface-alt: #f1f5f9;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background: #ffffff;
+    color: #1e293b;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  :focus-visible {
+    outline: 2px solid #00A8A8;
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-primary { color: #0B3C5D; }
+  .text-secondary { color: #00A8A8; }
+  .text-accent { color: #4FC3F7; }
+  .bg-primary { background-color: #0B3C5D; }
+  .bg-secondary { background-color: #00A8A8; }
+  .bg-accent { background-color: #4FC3F7; }
+  .border-primary { border-color: #0B3C5D; }
+  .border-secondary { border-color: #00A8A8; }
+  .border-accent { border-color: #4FC3F7; }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, #0B3C5D 0%, #1a5276 50%, #00A8A8 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #072b44 0%, #0B3C5D 40%, #00A8A8 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #00A8A8, #4FC3F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }

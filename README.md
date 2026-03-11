@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SI-PRIMA Landing Page
 
-## Getting Started
+Landing page statis untuk produk **SI-PRIMA** (SaaS Sistem Informasi Klinik) oleh PT Andhira Teknologi Nusantara.
 
-First, run the development server:
+**Stack**: Next.js 16 · React 19 · TypeScript · Tailwind CSS v4
+
+---
+
+## 🚀 Cara Menjalankan Secara Lokal
 
 ```bash
+# 1. Install dependencies
+npm install
+
+# 2. Jalankan development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Buka http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏗️ Build & Export Statis
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Build & export ke folder /out
+npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Cek responsivitas (butuh Puppeteer)
+npm run check:responsive
+```
 
-## Learn More
+## 📁 Struktur Folder
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx        ← Metadata, OG tags, font, LangProvider
+│   ├── page.tsx          ← Menggabungkan semua komponen
+│   └── globals.css       ← Brand tokens (Tailwind v4 @theme)
+├── components/           ← 10 TSX components
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── Problem.tsx
+│   ├── Features.tsx
+│   ├── ProductPreview.tsx
+│   ├── Benefits.tsx
+│   ├── Pricing.tsx
+│   ├── CTA.tsx
+│   ├── Contact.tsx
+│   └── Footer.tsx
+├── context/
+│   └── LangContext.tsx   ← Language toggle (id/en)
+└── lib/
+    └── i18n.ts           ← Semua konten teks
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ☁️ Deploy ke Netlify
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push repo ke GitHub.
+2. Login [Netlify](https://netlify.com) → **New site from Git**.
+3. Pilih repo → Build command: `npm run build` → Publish directory: `out`.
+4. Klik **Deploy site**.
 
-## Deploy on Vercel
+Atau gunakan `netlify.toml` yang sudah ada di root proyek.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✅ Checklist QA Manual
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Tab navigation dari atas ke bawah (keyboard a11y)
+- [ ] Language toggle ID ↔ EN berfungsi di semua section
+- [ ] Navbar blur muncul saat scroll
+- [ ] Mobile menu buka/tutup di viewport ≤ 768px
+- [ ] Gambar tampil benar (dashboard, mobile, workspace)
+- [ ] Tombol WhatsApp membuka `wa.me` link
+- [ ] Form kontak membuka email client saat submit
+- [ ] Semua anchor link scroll ke section yang benar
+- [ ] Google Chrome DevTools → iPhone 12 emulation (390px)
+
+## 🔧 Scripts
+
+| Script | Deskripsi |
+|--------|-----------|
+| `npm run dev` | Development server |
+| `npm run build` | Build & static export |
+| `npm run lint` | ESLint |
+| `npm run format` | Prettier |
+| `npm run check:responsive` | Screenshot mobile/desktop via Puppeteer |
