@@ -6,7 +6,7 @@ import { ArrowUpRight, Clock } from "lucide-react";
 
 const products = [
   {
-    image: "/si-prima-dashboard.png",
+    image: "/si-prima-dashboard.webp",
     badge: "Sistem Informasi Klinik",
     badgeColor: "bg-[#00A8A8]/10 text-[#00A8A8]",
     name: "SI-PRIMA",

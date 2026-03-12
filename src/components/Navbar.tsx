@@ -41,7 +41,7 @@ export default function Navbar() {
             aria-label="PT Andhira Teknologi Nusantara - Beranda"
           >
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="PT Andhira Teknologi Nusantara"
               width={150}
               height={44}

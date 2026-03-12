@@ -111,7 +111,7 @@ export default function Hero() {
             {/* Main image */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
               <Image
-                src="/hero-img.png"
+                src="/hero-img.webp"
                 alt="Tim PT Andhira Teknologi Nusantara"
                 width={640}
                 height={420}

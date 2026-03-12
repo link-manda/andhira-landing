@@ -48,7 +48,7 @@ export default function Footer() {
             <a href="#home" className="inline-block mb-4">
               <div className="inline-flex items-center rounded-xl py-2">
                 <Image
-                  src="/logo-footer.png"
+                  src="/logo-footer.webp"
                   alt="PT Andhira Teknologi Nusantara"
                   width={130}
                   height={40}
