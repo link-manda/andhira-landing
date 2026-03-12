@@ -1,86 +1,94 @@
 "use client";
 
 import Image from "next/image";
-import { Twitter, Linkedin, Instagram } from "lucide-react";
-import { useLang } from "@/context/LangContext";
+import { Instagram, Mail, MessageSquare, Globe } from "lucide-react";
+
+const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#services", label: "Services" },
+  { href: "#portfolio", label: "Portfolio" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
+];
+
+const services = [
+  "Pengembangan Sistem Informasi",
+  "Pembuatan Aplikasi Web",
+  "Solusi SaaS",
+  "Integrasi Sistem",
+  "Konsultasi Digital",
+  "Maintenance & Support",
+];
+
+const socialLinks = [
+  {
+    icon: Instagram,
+    href: "https://instagram.com/andhira_teknologi",
+    label: "Instagram",
+  },
+  { icon: Mail, href: "mailto:sales@andhira-tech.my.id", label: "Email" },
+  {
+    icon: MessageSquare,
+    href: "https://wa.me/62895623318351",
+    label: "WhatsApp",
+  },
+  { icon: Globe, href: "https://andhira-tech.my.id", label: "Website" },
+];
 
 export default function Footer() {
-  const { t } = useLang();
-
-  const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter / X" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    {
-      icon: Instagram,
-      href: "https://instagram.com/andhira.tech",
-      label: "Instagram",
-    },
-  ];
+  const year = new Date().getFullYear();
 
   return (
-    <footer
-      className="pt-16 pb-8"
-      style={{ backgroundColor: "#072b44" }}
-      aria-label="Footer"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b"
-          style={{ borderColor: "rgba(255,255,255,0.08)" }}
-        >
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="mb-4 inline-block bg-white/10 rounded-xl p-2 backdrop-blur-sm">
-              <Image
-                src="/logo.png"
-                alt="Logo SI-PRIMA"
-                width={130}
-                height={44}
-                className="h-10 w-auto object-contain rounded-md"
-                loading="lazy"
-              />
-            </div>
-            <p className="text-white/40 text-sm font-medium mb-3 italic">
-              {t.footer.tagline}
+    <footer className="bg-[#072b44] text-white" aria-label="Footer">
+      {/* Main grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* ── Brand ── */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <a href="#home" className="inline-block mb-4">
+              <div className="inline-flex items-center rounded-xl py-2">
+                <Image
+                  src="/logo-footer.png"
+                  alt="PT Andhira Teknologi Nusantara"
+                  width={130}
+                  height={40}
+                  className="h-13 w-auto rounded-lg"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+            <p className="text-sm text-blue-200/60 leading-relaxed mb-6 max-w-xs">
+              Membangun solusi digital yang efisien dan scalable untuk bisnis
+              dan organisasi di Indonesia.
             </p>
-            <p className="text-white/60 text-sm leading-relaxed max-w-sm">
-              {t.footer.description}
-            </p>
-            {/* Social */}
-            <div className="mt-6 flex gap-3">
+            {/* Socials */}
+            <div className="flex items-center gap-3">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110"
-                  style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.backgroundColor =
-                      "rgba(0,168,168,0.3)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.backgroundColor =
-                      "rgba(255,255,255,0.08)")
-                  }
+                  className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#00A8A8] flex items-center justify-center transition-colors"
                 >
-                  <Icon size={16} className="text-white/70" />
+                  <Icon className="w-4 h-4 text-white" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Product Links */}
+          {/* ── Navigation ── */}
           <div>
-            <h4 className="text-white font-semibold mb-4">
-              {t.footer.product.heading}
-            </h4>
-            <ul className="space-y-2.5">
-              {t.footer.product.links.map((link) => (
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
+              Navigasi
+            </h3>
+            <ul className="space-y-3">
+              {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/55 hover:text-[#4FC3F7] transition-colors duration-200"
+                    className="text-sm text-blue-200/60 hover:text-[#4FC3F7] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -89,31 +97,67 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company Links */}
+          {/* ── Services ── */}
           <div>
-            <h4 className="text-white font-semibold mb-4">
-              {t.footer.company.heading}
-            </h4>
-            <ul className="space-y-2.5">
-              {t.footer.company.links.map((link) => (
-                <li key={link.href}>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
+              Layanan
+            </h3>
+            <ul className="space-y-3">
+              {services.map((s) => (
+                <li key={s}>
                   <a
-                    href={link.href}
-                    className="text-sm text-white/55 hover:text-[#4FC3F7] transition-colors duration-200"
+                    href="#services"
+                    className="text-sm text-blue-200/60 hover:text-[#4FC3F7] transition-colors"
                   >
-                    {link.label}
+                    {s}
                   </a>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* ── Contact ── */}
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-5">
+              Kontak
+            </h3>
+            <ul className="space-y-3 text-sm text-blue-200/60">
+              <li>
+                <a
+                  href="mailto:sales@andhira-tech.my.id"
+                  className="hover:text-[#4FC3F7] transition-colors break-all"
+                >
+                  sales@andhira-tech.my.id
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/62895623318351"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#4FC3F7] transition-colors"
+                >
+                  +62 895 6233 18351
+                </a>
+              </li>
+              <li className="leading-relaxed">
+                Jl. Cempaka GG.II, Sukawati,
+                <br />
+                Gianyar, Bali 80582
+              </li>
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-xs">{t.footer.copyright}</p>
-          <p className="text-white/25 text-xs">
-            Dibangun dengan ❤️ oleh tim Andhira Teknologi
+      {/* Bottom bar */}
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-blue-200/40 text-center sm:text-left">
+            © {year} PT Andhira Teknologi Nusantara. Hak cipta dilindungi.
+          </p>
+          <p className="text-xs text-blue-200/30">
+            Dibangun dengan ❤ di Bali, Indonesia
           </p>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { LangProvider } from "@/context/LangContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,54 +8,56 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-const BASE_URL = "https://si-prima.andhira.id";
+const BASE_URL = "https://andhira-tech.my.id";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: "SI-PRIMA — Sistem Informasi Klinik | PT Andhira Teknologi Nusantara",
+  title: "PT Andhira Teknologi Nusantara — Solusi Digital untuk Bisnis Modern",
   description:
-    "SI-PRIMA membantu klinik dan praktisi mengelola rekam medis, jadwal, dan laporan secara cepat dan aman. Digitalisasi klinik Anda sekarang — mudah, aman, terintegrasi.",
+    "Andhira membantu bisnis dan organisasi mengembangkan sistem informasi, aplikasi web, dan solusi digital yang efisien dan scalable. Konsultasi gratis.",
   keywords: [
-    "sistem informasi klinik",
-    "rekam medik elektronik",
-    "aplikasi klinik",
-    "SaaS kesehatan",
-    "manajemen klinik",
+    "PT Andhira Teknologi Nusantara",
+    "pengembangan sistem informasi",
+    "pembuatan aplikasi web",
+    "solusi SaaS Indonesia",
+    "konsultasi transformasi digital",
+    "integrasi sistem",
+    "IT support",
+    "software house Indonesia",
     "SI-PRIMA",
-    "Andhira Teknologi",
   ],
   authors: [{ name: "PT Andhira Teknologi Nusantara", url: BASE_URL }],
   openGraph: {
     type: "website",
     url: BASE_URL,
-    title: "SI-PRIMA — Sistem Informasi Klinik Indonesia",
+    title:
+      "PT Andhira Teknologi Nusantara — Solusi Digital untuk Bisnis Modern",
     description:
-      "SI-PRIMA membantu klinik dan praktisi mengelola rekam medis, jadwal, dan laporan secara cepat dan aman.",
-    siteName: "SI-PRIMA by Andhira Teknologi",
+      "Andhira membantu bisnis dan organisasi mengembangkan sistem informasi, aplikasi, dan solusi digital yang efisien dan scalable.",
+    siteName: "PT Andhira Teknologi Nusantara",
     images: [
       {
-        url: "/si-prima-dashboard.png",
+        url: "/workspace.png",
         width: 1200,
         height: 630,
-        alt: "Dashboard SI-PRIMA — Sistem Informasi Klinik",
+        alt: "PT Andhira Teknologi Nusantara",
       },
     ],
     locale: "id_ID",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SI-PRIMA — Sistem Informasi Klinik | PT Andhira Teknologi Nusantara",
-    description:
-      "Digitalisasi klinik Anda dengan SI-PRIMA — mudah, aman, terintegrasi.",
-    images: ["/si-prima-dashboard.png"],
+    title: "PT Andhira Teknologi Nusantara",
+    description: "Solusi Digital untuk Bisnis Modern",
+    images: ["/workspace.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: { index: true, follow: true },
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  icons: { icon: "/favicon.ico" },
+  alternates: { canonical: BASE_URL },
 };
 
 export default function RootLayout({
@@ -69,9 +70,7 @@ export default function RootLayout({
       <head>
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       </head>
-      <body className="antialiased">
-        <LangProvider>{children}</LangProvider>
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

@@ -1,10 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Problem from "@/components/Problem";
-import Features from "@/components/Features";
-import ProductPreview from "@/components/ProductPreview";
-import Benefits from "@/components/Benefits";
-import Pricing from "@/components/Pricing";
+import Services from "@/components/Services";
+import Portfolio from "@/components/Portfolio";
+import WhyUs from "@/components/WhyUs";
+import About from "@/components/About";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -14,11 +13,10 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <Problem />
-      <Features />
-      <ProductPreview />
-      <Benefits />
-      <Pricing />
+      <Services />
+      <Portfolio />
+      <WhyUs />
+      <About />
       <CTA />
       <Contact />
       <Footer />

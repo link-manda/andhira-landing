@@ -1,71 +1,56 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight } from "lucide-react";
-import { useLang } from "@/context/LangContext";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 const WA_NUMBER = "62895623318351";
 const WA_MESSAGE =
-  "Halo, saya tertarik dengan SI-PRIMA dan ingin mengetahui lebih lanjut tentang fitur dan harga.";
+  "Halo Andhira, saya ingin konsultasi gratis mengenai pengembangan sistem untuk bisnis saya.";
 
 export default function CTA() {
-  const { t } = useLang();
   const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
 
   return (
-    <section
-      id="cta"
-      className="py-20 lg:py-28 relative overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(135deg, #072b44 0%, #0B3C5D 50%, #006b6b 100%)",
-      }}
-    >
-      {/* Background decorations */}
+    <section className="section-padding gradient-hero relative overflow-hidden">
+      {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute -top-32 -right-32 w-80 h-80 rounded-full opacity-15"
-          style={{
-            background: "radial-gradient(circle, #00A8A8 0%, transparent 70%)",
-          }}
-        />
-        <div
-          className="absolute -bottom-32 -left-32 w-64 h-64 rounded-full opacity-10"
-          style={{
-            background: "radial-gradient(circle, #4FC3F7 0%, transparent 70%)",
-          }}
-        />
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#00A8A8]/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#4FC3F7]/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
-            {t.cta.heading}
+          {/* Badge */}
+          <span className="inline-block px-3 py-1 bg-[#00A8A8]/25 border border-[#00A8A8]/40 text-[#4FC3F7] text-sm font-medium rounded-full mb-6">
+            Mulai Perjalanan Digital Anda
+          </span>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-5">
+            Siap Mengembangkan Sistem
+            <br className="hidden sm:block" /> untuk Bisnis Anda?
           </h2>
-          <p className="text-lg text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
-            {t.cta.subheading}
+
+          <p className="text-blue-100/75 text-base sm:text-lg max-w-xl mx-auto mb-10">
+            Konsultasikan kebutuhan sistem Anda bersama tim kami. Gratis, tanpa
+            komitmen, dan kami siap membantu Anda menemukan solusi terbaik.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center">
-            {/* WhatsApp CTA */}
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl text-base font-semibold text-white transition-all duration-200 shadow-lg"
-              style={{
-                backgroundColor: "#25D366",
-                boxShadow: "0 0 0 0 rgba(37,211,102,0.5)",
-              }}
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-[#25D366] text-white font-semibold rounded-xl hover:bg-[#1dbc58] transition-all shadow-lg"
               animate={{
                 boxShadow: [
                   "0 0 0 0 rgba(37,211,102,0.5)",
-                  "0 0 0 12px rgba(37,211,102,0)",
+                  "0 0 0 14px rgba(37,211,102,0)",
                   "0 0 0 0 rgba(37,211,102,0.5)",
                 ],
               }}
@@ -73,20 +58,16 @@ export default function CTA() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             >
-              <MessageCircle size={22} />
-              {t.cta.whatsapp}
+              <MessageCircle className="w-5 h-5" />
+              Konsultasi Gratis via WhatsApp
             </motion.a>
-
-            {/* Demo CTA */}
-            <motion.a
+            <a
               href="#contact"
-              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl text-base font-semibold text-white border-2 border-white/30 hover:border-white/60 hover:bg-white/10 transition-all duration-200"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/25"
             >
-              {t.cta.demo}
-              <ArrowRight size={18} />
-            </motion.a>
+              Hubungi Kami
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </motion.div>
       </div>
