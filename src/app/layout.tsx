@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "PT Andhira Teknologi Nusantara",
     images: [
       {
-        url: "/workspace.png",
+        url: "/hero-img.webp",
         width: 1200,
         height: 630,
         alt: "PT Andhira Teknologi Nusantara",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PT Andhira Teknologi Nusantara",
     description: "Solusi Digital untuk Bisnis Modern",
-    images: ["/workspace.png"],
+    images: ["/hero-img.webp"],
   },
   robots: {
     index: true,
