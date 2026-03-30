@@ -17,6 +17,18 @@ const products = [
     href: "https://si-prima.id",
     external: true,
   },
+  {
+    image: "/atcs-dashboard.png",
+    badge: "Sistem Manajemen Lalu Lintas",
+    badgeColor: "bg-[#0B3C5D]/10 text-[#0B3C5D]",
+    name: "BALI COMMAND CENTER",
+    description:
+      "Platform command center ATCS (Area Traffic Control System) Provinsi Bali — monitoring 92 kamera CCTV secara real-time, peta persebaran interaktif, dan analitik lalu lintas 8 kabupaten/kota.",
+    tags: ["ATCS", "Smart City", "Real-time Monitoring"],
+    cta: "Lihat Produk",
+    href: "https://atcs.andhira-tech.my.id/",
+    external: true,
+  },
 ];
 
 const placeholder = {
