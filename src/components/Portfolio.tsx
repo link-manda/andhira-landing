@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Clock } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const products = [
   {
@@ -29,14 +29,21 @@ const products = [
     href: "https://atcs.andhira-tech.my.id/",
     external: true,
   },
+  {
+    image: "/asset-management.png",
+    badge: "Sistem Manajemen Aset",
+    badgeColor: "bg-[#8B5CF6]/10 text-[#8B5CF6]",
+    name: "Asset Management",
+    description:
+      "Platform manajemen siklus hidup aset perusahaan — dari pendaftaran katalog master, pelacakan unit fisik, distribusi/peminjaman, pemeliharaan, hingga penghapusan aset dengan dukungan RBAC dan perhitungan penyusutan otomatis.",
+    tags: ["Asset Lifecycle", "Enterprise", "Depreciation"],
+    cta: "Lihat Produk",
+    href: "#",
+    external: false,
+  },
 ];
 
-const placeholder = {
-  name: "Produk Berikutnya",
-  description:
-    "Kami terus berinovasi mengembangkan solusi digital baru. Tetap pantau untuk mengetahui produk terbaru kami.",
-  comingSoon: true,
-};
+
 
 const container = {
   hidden: {},
@@ -138,24 +145,7 @@ export default function Portfolio() {
             </motion.div>
           ))}
 
-          {/* Coming soon placeholder */}
-          <motion.div
-            variants={item}
-            className="bg-[#f8fafc] rounded-2xl overflow-hidden border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-8 sm:p-10 text-center min-h-[260px] sm:min-h-[360px]"
-          >
-            <div className="w-14 h-14 bg-gray-200 rounded-2xl flex items-center justify-center mb-4">
-              <Clock className="w-7 h-7 text-gray-400" />
-            </div>
-            <h3 className="text-lg font-bold text-gray-400 mb-2">
-              {placeholder.name}
-            </h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              {placeholder.description}
-            </p>
-            <span className="px-3 py-1 bg-gray-200 text-gray-500 text-xs font-semibold rounded-full">
-              Coming Soon
-            </span>
-          </motion.div>
+
         </motion.div>
       </div>
     </section>
