@@ -28,7 +28,7 @@ export default function About() {
             {/* Main image */}
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/workspace.webp"
+                src="/ecosystem_tech.webp"
                 alt="Tim PT Andhira Teknologi Nusantara"
                 width={600}
                 height={420}
