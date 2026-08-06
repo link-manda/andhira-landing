@@ -13,14 +13,14 @@ export const content = {
       langToggle: "EN",
     },
     hero: {
-      headline: "Digitalisasi Klinik Anda — Mudah, Aman, Terintegrasi.",
+      headline: "Sistem Informasi & Aplikasi Web yang Tepat Guna untuk Skala Bisnis Anda.",
       subheadline:
-        "SI-PRIMA membantu klinik dan praktisi mengelola rekam medis, jadwal, dan laporan secara cepat dan aman.",
-      ctaPrimary: "Demo Gratis",
-      ctaSecondary: "Konsultasi",
+        "PT Andhira Teknologi Nusantara membantu klinik, perusahaan, dan organisasi merancang perangkat lunak yang stabil, aman, dan mudah dioperasikan sehari-hari.",
+      ctaPrimary: "Konsultasi Gratis",
+      ctaSecondary: "Jelajahi Portofolio",
       imageAlt:
-        "Dashboard SI-PRIMA — tampilan antarmuka sistem informasi klinik",
-      tagline: "Integrating Technology, Empowering Future",
+        "Dashboard SI-PRIMA — sistem informasi klinik terpadu",
+      tagline: "Rekayasa Perangkat Lunak Enterprise",
     },
     problem: {
       heading: "Tantangan yang Klinik Anda Hadapi Setiap Hari",

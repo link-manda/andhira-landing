@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Sparkles, CheckCircle2 } from "lucide-react";
 
 const stats = [
-  { value: "50+", label: "Proyek Selesai" },
+  { value: "50+", label: "Proyek Digital" },
   { value: "5+", label: "Tahun Pengalaman" },
   { value: "30+", label: "Klien Puas" },
 ];
@@ -14,148 +14,131 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center gradient-hero overflow-hidden pt-16"
+      className="relative min-h-[92vh] flex flex-col items-center justify-center bg-[#030712] overflow-hidden pt-28 pb-16"
       aria-label="Hero — PT Andhira Teknologi Nusantara"
     >
-      {/* Background blobs */}
+      {/* Dynamic Background Spotlights & Noise Mesh */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#00A8A8]/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#4FC3F7]/10 rounded-full blur-3xl" />
-        {/* Subtle grid */}
-        <svg
-          className="absolute inset-0 w-full h-full opacity-[0.04]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern
-              id="grid"
-              width="40"
-              height="40"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 40 0 L 0 0 0 40"
-                fill="none"
-                stroke="white"
-                strokeWidth="0.6"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-[#00c4b4]/20 via-[#38bdf8]/15 to-transparent rounded-full blur-[120px]" />
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#0b1329]/60 rounded-full blur-[140px]" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-40" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10 sm:py-14 lg:py-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
-          {/* ── Left: copy ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Left Hero Copy */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
+            className="lg:col-span-7 text-center lg:text-left"
           >
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00A8A8]/20 border border-[#00A8A8]/30 rounded-full text-[#4FC3F7] text-xs sm:text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-[#00A8A8] rounded-full animate-pulse" />
-              PT Andhira Teknologi Nusantara
+            {/* Live Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-[#38bdf8] text-xs font-medium mb-6 hover:border-[#00c4b4]/40 transition-colors">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00c4b4] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00c4b4]"></span>
+              </span>
+              <Sparkles className="w-3.5 h-3.5 text-[#00c4b4]" />
+              <span className="tracking-wide">PT Andhira Teknologi Nusantara</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
-              Membangun <span className="text-gradient">Solusi Digital</span>
-              <br />
-              untuk Bisnis Modern
+            {/* Display Headline */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-6 font-display">
+              Sistem Informasi & <span className="text-gradient">Aplikasi Web</span> <br />
+              yang Tepat Guna.
             </h1>
 
-            <p className="text-base sm:text-lg text-blue-100/80 mb-8 max-w-xl leading-relaxed">
-              Andhira membantu bisnis dan organisasi mengembangkan sistem
-              informasi, aplikasi, dan solusi digital yang efisien dan scalable.
+            <p className="text-base sm:text-lg text-gray-300/90 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-sans">
+              Kami bantu perusahaan, klinik, dan instansi merancang perangkat lunak yang stabil, aman, dan mudah dioperasikan sehari-hari.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#00A8A8] text-white font-semibold rounded-xl hover:bg-[#007a7a] transition-all hover:scale-105 shadow-lg glow-secondary"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-[#00c4b4] to-[#38bdf8] text-[#030712] font-bold text-sm rounded-2xl hover:shadow-[0_0_35px_rgba(0,196,180,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
               >
-                Konsultasi Sekarang
+                Konsultasi Gratis
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#portfolio"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/20"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 bg-white/5 text-gray-200 hover:text-white font-semibold text-sm rounded-2xl hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all duration-200"
               >
-                Lihat Portfolio
+                Jelajahi Portofolio
               </a>
             </div>
 
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8">
+            {/* Stats Row */}
+            <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
               {stats.map((s) => (
-                <div key={s.label}>
-                  <p className="text-3xl font-bold text-white">{s.value}</p>
-                  <p className="text-sm text-blue-200/60 mt-0.5">{s.label}</p>
+                <div key={s.label} className="text-center lg:text-left">
+                  <p className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display font-variant-numeric tabular-nums">
+                    {s.value}
+                  </p>
+                  <p className="text-xs text-gray-400 mt-1 font-medium">{s.label}</p>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* ── Right: image ── */}
+          {/* Right Floating Image & Glass Cards */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
-            className="relative hidden lg:block"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
+            className="lg:col-span-5 relative hidden lg:block"
           >
-            {/* Glow */}
-            <div className="absolute inset-0 bg-[#00A8A8]/20 rounded-2xl blur-3xl scale-95" />
+            {/* Ambient Backlight Halo */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#00c4b4]/30 to-[#38bdf8]/20 rounded-3xl blur-3xl scale-95" />
 
-            {/* Main image */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <Image
-                src="/hero-img.webp"
-                alt="Tim PT Andhira Teknologi Nusantara"
-                width={640}
-                height={420}
-                className="w-full h-auto object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0B3C5D]/30 via-transparent to-[#00A8A8]/10" />
+            {/* Hero Main Mockup Frame */}
+            <div className="relative rounded-3xl overflow-hidden glass-card p-2 border border-white/15 shadow-2xl">
+              <div className="rounded-2xl overflow-hidden relative aspect-[4/3]">
+                <Image
+                  src="/hero-img.webp"
+                  alt="Tim PT Andhira Teknologi Nusantara"
+                  fill
+                  sizes="(max-width: 1200px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-60" />
+              </div>
             </div>
 
-            {/* Floating: projects */}
+            {/* Floating Glass Badges */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="absolute -bottom-5 -left-5 bg-white rounded-2xl px-5 py-3.5 shadow-2xl"
+              initial={{ opacity: 0, x: -20, y: 20 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="absolute -bottom-6 -left-6 glass-card p-4 rounded-2xl border border-white/15 shadow-2xl flex items-center gap-3 backdrop-blur-2xl"
             >
-              <p className="text-2xl font-bold text-[#0B3C5D]">50+</p>
-              <p className="text-xs text-gray-500 mt-0.5">Proyek Berhasil</p>
-            </motion.div>
-
-            {/* Floating: experience */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="absolute -top-5 -right-5 bg-[#00A8A8] rounded-2xl px-5 py-3.5 shadow-2xl"
-            >
-              <p className="text-2xl font-bold text-white">5+</p>
-              <p className="text-xs text-white/80 mt-0.5">Tahun Pengalaman</p>
+              <div className="w-10 h-10 rounded-xl bg-[#00c4b4]/20 border border-[#00c4b4]/30 flex items-center justify-center text-[#00c4b4]">
+                <CheckCircle2 className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-white">Enterprise Scalable</p>
+                <p className="text-[11px] text-gray-400">Arsitektur Teruji & Safe</p>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Subtle Scroll Indicator */}
       <motion.a
         href="#services"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40 hover:text-white/70 transition-colors"
+        transition={{ delay: 1 }}
+        className="mt-12 flex flex-col items-center gap-1.5 text-gray-400 hover:text-white transition-colors group"
       >
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <ChevronDown className="w-5 h-5 animate-bounce" />
+        <span className="text-[10px] tracking-widest uppercase font-semibold text-gray-400 group-hover:text-[#00c4b4] transition-colors">
+          Jelajahi
+        </span>
+        <ChevronDown className="w-4 h-4 animate-bounce text-[#00c4b4]" />
       </motion.a>
     </section>
   );

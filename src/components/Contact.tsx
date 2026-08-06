@@ -1,136 +1,133 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MessageSquare, Instagram, Globe, MapPin } from "lucide-react";
+import { Mail, MessageSquare, Instagram, Globe, MapPin, CheckCircle2 } from "lucide-react";
 
 const contactItems = [
   {
     icon: Mail,
-    label: "Email",
+    label: "Email Resmi",
     value: "sales@andhira-tech.my.id",
     href: "mailto:sales@andhira-tech.my.id",
-    iconBg: "bg-[#0B3C5D]/10",
-    iconColor: "text-[#0B3C5D]",
     external: false,
   },
   {
     icon: MessageSquare,
-    label: "WhatsApp",
+    label: "WhatsApp Direct",
     value: "+62 895 6233 18351",
     href: "https://wa.me/62895623318351?text=Halo%20Andhira%2C%20saya%20ingin%20bertanya%20mengenai%20layanan%20Anda.",
-    iconBg: "bg-[#25D366]/10",
-    iconColor: "text-[#25D366]",
     external: true,
   },
   {
     icon: Instagram,
-    label: "Instagram",
+    label: "Instagram Official",
     value: "@andhira.tech",
     href: "https://instagram.com/andhira.tech",
-    iconBg: "bg-pink-50",
-    iconColor: "text-pink-500",
     external: true,
   },
   {
     icon: Globe,
-    label: "Website",
+    label: "Domain Website",
     value: "andhira-tech.my.id",
     href: "https://andhira-tech.my.id",
-    iconBg: "bg-[#00A8A8]/10",
-    iconColor: "text-[#00A8A8]",
     external: true,
   },
   {
     icon: MapPin,
-    label: "Alamat",
+    label: "Kantor Operasional",
     value: "Jl. Cempaka GG.II, Sukawati, Gianyar, Bali 80582",
     href: "https://maps.google.com/?q=Sukawati+Gianyar+Bali",
-    iconBg: "bg-orange-50",
-    iconColor: "text-orange-500",
     external: true,
   },
 ];
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
 };
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 15 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
+  },
 };
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-padding bg-[#f8fafc]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 items-start">
-          {/* ── Left: heading ── */}
+    <section id="contact" className="section-padding bg-[#070e1b] relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[450px] h-[450px] bg-[#00c4b4]/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Heading Column */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
+            className="lg:col-span-6"
           >
-            <span className="inline-block px-3 py-1 bg-[#00A8A8]/10 text-[#00A8A8] text-sm font-semibold rounded-full mb-5">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#00c4b4]/10 border border-[#00c4b4]/20 text-[#00c4b4] text-xs font-semibold tracking-wide uppercase mb-4">
               Hubungi Kami
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B3C5D] mb-5 leading-tight">
-              Siap Berdiskusi?
-              <br />
-              <span className="text-gradient">Kami Siap Membantu.</span>
+            <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6 leading-tight font-display">
+              Siap Mentransformasi Sistem Anda? <span className="text-gradient">Mari Berdiskusi.</span>
             </h2>
-            <p className="text-gray-500 text-base leading-relaxed mb-8 max-w-md">
-              Ceritakan kebutuhan bisnis Anda kepada kami. Tim kami akan
-              menghubungi Anda dan memberikan konsultasi terbaik tanpa biaya.
+            <p className="text-gray-300 text-base leading-relaxed mb-8 max-w-lg">
+              Sampaikan kebutuhan sistem atau gagasan produk Anda. Tim spesialis kami siap mendampingi perencanaan dan arsitektur IT terbaik tanpa biaya awal.
             </p>
 
-            {/* Quick highlights */}
-            <div className="flex flex-col gap-3">
+            {/* Guarantees */}
+            <div className="flex flex-col gap-3.5 pt-4 border-t border-white/10">
               {[
-                "Respons cepat dalam 1×24 jam",
-                "Konsultasi awal gratis",
-                "Tidak ada komitmen",
+                "Respons cepat dalam 1×24 jam kerja",
+                "Konsultasi awal 100% gratis",
+                "Tanpa keterikatan atau komitmen awal",
               ].map((t) => (
-                <div key={t} className="flex items-center gap-2">
-                  <span className="w-5 h-5 shrink-0 rounded-full bg-[#00A8A8]/15 flex items-center justify-center text-[#00A8A8] text-xs font-bold">
-                    ✓
-                  </span>
-                  <span className="text-gray-600 text-sm">{t}</span>
+                <div key={t} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#00c4b4]/20 border border-[#00c4b4]/40 flex items-center justify-center text-[#00c4b4] shrink-0">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="text-gray-300 text-sm font-medium">{t}</span>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* ── Right: contact cards ── */}
+          {/* Right Cards Column */}
           <motion.div
-            variants={container}
+            variants={containerVariants}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="flex flex-col gap-4"
+            className="lg:col-span-6 flex flex-col gap-4"
           >
             {contactItems.map((c) => {
               const Icon = c.icon;
               return (
                 <motion.a
                   key={c.label}
-                  variants={item}
+                  variants={itemVariants}
                   href={c.href}
                   target={c.external ? "_blank" : undefined}
                   rel={c.external ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-4 bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#00A8A8]/20 transition-all group"
+                  className="glass-card glass-card-hover rounded-2xl p-5 flex items-center gap-5 group"
                 >
-                  <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${c.iconBg} ${c.iconColor} transition-transform group-hover:scale-110`}
-                  >
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-[#00c4b4] group-hover:bg-[#00c4b4]/20 group-hover:scale-110 transition-all duration-300">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="overflow-hidden">
                     <p className="text-xs text-gray-400 font-medium mb-0.5">
                       {c.label}
                     </p>
-                    <p className="text-sm font-semibold text-[#1e293b] group-hover:text-[#00A8A8] transition-colors">
+                    <p className="text-sm font-semibold text-white group-hover:text-[#00c4b4] transition-colors truncate">
                       {c.value}
                     </p>
                   </div>

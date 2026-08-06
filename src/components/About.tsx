@@ -2,99 +2,96 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Shield } from "lucide-react";
 
 const highlights = [
-  "Berdedikasi penuh pada kualitas di setiap proyek",
-  "Mengutamakan kebutuhan dan kepuasan klien",
-  "Menggunakan teknologi modern dan terpercaya",
-  "Proses pengembangan yang transparan dan terstruktur",
-  "Mitra teknologi jangka panjang yang bisa diandalkan",
+  "Berdedikasi penuh pada standar kualitas tertinggi di setiap proyek",
+  "Mengutamakan kebutuhan spesifik & skala operasional klien",
+  "Stack teknologi modern, aman, serta siap pakai jangka panjang",
+  "Metodologi pengembangan terstruktur dan transparan",
+  "Dukungan purna jual & maintenance berkesinambungan",
 ];
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-white overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 items-center">
-          {/* ── Left: image — order-2 on mobile so text renders first ── */}
+    <section id="about" className="section-padding bg-[#030712] relative overflow-hidden">
+      {/* Ambient Glow */}
+      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-[#00c4b4]/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Glass Framed Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
             className="relative order-2 lg:order-1"
           >
-            {/* Main image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/ecosystem_tech.webp"
-                alt="Tim PT Andhira Teknologi Nusantara"
-                width={600}
-                height={420}
-                className="w-full h-auto object-cover"
-              />
+            <div className="glass-card p-3 rounded-3xl border border-white/15 shadow-2xl relative">
+              <div className="rounded-2xl overflow-hidden relative aspect-[4/3]">
+                <Image
+                  src="/ecosystem_tech.webp"
+                  alt="Tim PT Andhira Teknologi Nusantara"
+                  fill
+                  sizes="(max-width: 1200px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/80 via-transparent to-transparent" />
+              </div>
             </div>
 
-            {/* Decorative — hidden on mobile to prevent horizontal overflow */}
-            <div className="hidden sm:block absolute -bottom-6 -right-6 w-32 h-32 bg-[#00A8A8]/15 rounded-2xl -z-10" />
-            <div className="hidden sm:block absolute -top-6 -left-6 w-20 h-20 bg-[#4FC3F7]/20 rounded-xl -z-10" />
-
-            {/* Floating card */}
+            {/* Floating Glass Badge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.9, y: 15 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="absolute bottom-6 left-6 bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex items-center gap-3"
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="absolute -bottom-6 -right-6 glass-card p-4 rounded-2xl border border-white/20 shadow-2xl flex items-center gap-3 backdrop-blur-2xl"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-[#0B3C5D] to-[#00A8A8] rounded-xl flex items-center justify-center shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 bg-gradient-to-tr from-[#00c4b4] to-[#38bdf8] rounded-xl flex items-center justify-center text-[#030712] shrink-0 font-bold">
+                <Shield className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm font-bold text-[#0B3C5D]">
-                  Terpercaya & Profesional
+                <p className="text-xs font-bold text-white font-display">
+                  Standar Kualitas Tinggi
                 </p>
-                <p className="text-xs text-gray-500">
-                  Solusi IT terbaik untuk bisnis Anda
+                <p className="text-[11px] text-gray-400">
+                  Solusi IT Handal & Aman
                 </p>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* ── Right: text — order-1 on mobile so it shows first ── */}
+          {/* Right: Text Copy */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
             className="order-1 lg:order-2"
           >
-            <span className="inline-block px-3 py-1 bg-[#0B3C5D]/10 text-[#0B3C5D] text-sm font-semibold rounded-full mb-5">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#00c4b4]/10 border border-[#00c4b4]/20 text-[#00c4b4] text-xs font-semibold tracking-wide uppercase mb-4">
               Tentang Kami
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B3C5D] mb-5 leading-tight">
-              Teknologi sebagai Fondasi{" "}
-              <span className="text-gradient">Pertumbuhan Bisnis</span>
+            <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6 leading-tight font-display">
+              Perangkat Lunak yang Didesain untuk <span className="text-gradient">Memudahkan Manusia</span>.
             </h2>
-            <p className="text-gray-600 text-base leading-relaxed mb-5">
-              PT Andhira Teknologi Nusantara adalah perusahaan teknologi yang
-              berfokus pada pengembangan sistem informasi, aplikasi bisnis, dan
-              solusi digital yang membantu organisasi bekerja lebih efisien.
+            <p className="text-gray-300 text-base leading-relaxed mb-4">
+              PT Andhira Teknologi Nusantara berfokus membangun sistem informasi operasional, aplikasi bisnis, dan produk digital yang langsung menyelesaikan masalah teknis di lapangan.
             </p>
-            <p className="text-gray-500 text-base leading-relaxed mb-8">
-              Sejak berdiri, kami telah mendampingi berbagai klinik, bisnis
-              kecil-menengah, dan organisasi dalam proses digitalisasi mereka.
-              Kami percaya bahwa teknologi yang tepat dapat menjadi pembeda
-              kompetitif yang signifikan.
+            <p className="text-gray-400 text-sm leading-relaxed mb-8">
+              Kami percaya bahwa teknologi yang dirancang secara matang bukan sekadar keren secara visual, melainkan menjadi fondasi kokoh bagi efisiensi dan pertumbuhan bisnis Anda.
             </p>
 
             {/* Highlights */}
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {highlights.map((h) => (
                 <li key={h} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#00A8A8] shrink-0 mt-0.5" />
-                  <span className="text-gray-600 text-sm">{h}</span>
+                  <div className="w-5 h-5 rounded-full bg-[#00c4b4]/20 border border-[#00c4b4]/40 flex items-center justify-center text-[#00c4b4] shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="text-gray-300 text-sm">{h}</span>
                 </li>
               ))}
             </ul>

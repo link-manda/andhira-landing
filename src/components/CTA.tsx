@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 
 const WA_NUMBER = "62895623318351";
 const WA_MESSAGE =
@@ -11,65 +11,56 @@ export default function CTA() {
   const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
 
   return (
-    <section className="section-padding gradient-hero relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#00A8A8]/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#4FC3F7]/10 rounded-full blur-3xl" />
-      </div>
+    <section className="section-padding bg-[#030712] relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="glass-card rounded-3xl p-8 sm:p-14 border border-white/15 relative overflow-hidden text-center shadow-2xl">
+          {/* Ambient Glow Elements */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-[#00c4b4]/20 via-[#38bdf8]/15 to-transparent rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          {/* Badge */}
-          <span className="inline-block px-3 py-1 bg-[#00A8A8]/25 border border-[#00A8A8]/40 text-[#4FC3F7] text-sm font-medium rounded-full mb-6">
-            Mulai Perjalanan Digital Anda
-          </span>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
+            className="relative z-10 max-w-3xl mx-auto"
+          >
+            {/* Badge */}
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#00c4b4]/10 border border-[#00c4b4]/20 text-[#00c4b4] text-xs font-semibold tracking-wide uppercase mb-6">
+              <Sparkles className="w-3.5 h-3.5" />
+              Mulai Konsultasi Digital
+            </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-5">
-            Siap Mengembangkan Sistem
-            <br className="hidden sm:block" /> untuk Bisnis Anda?
-          </h2>
+            <h2 className="text-3xl sm:text-5xl font-bold text-white leading-tight mb-5 font-display">
+              Ingin Diskusi Mengenai Kebutuhan Sistem Anda?
+            </h2>
 
-          <p className="text-blue-100/75 text-base sm:text-lg max-w-xl mx-auto mb-10">
-            Konsultasikan kebutuhan sistem Anda bersama tim kami. Gratis, tanpa
-            komitmen, dan kami siap membantu Anda menemukan solusi terbaik.
-          </p>
+            <p className="text-gray-300 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed font-sans">
+              Tim analis kami siap mendengarkan tantangan bisnis Anda dan memberikan rekomendasi solusi teknis. 100% bebas biaya konsultasi awal.
+            </p>
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-[#25D366] text-white font-semibold rounded-xl hover:bg-[#1dbc58] transition-all shadow-lg"
-              animate={{
-                boxShadow: [
-                  "0 0 0 0 rgba(37,211,102,0.5)",
-                  "0 0 0 14px rgba(37,211,102,0)",
-                  "0 0 0 0 rgba(37,211,102,0.5)",
-                ],
-              }}
-              transition={{ repeat: Infinity, duration: 2.5 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <MessageCircle className="w-5 h-5" />
-              Konsultasi Gratis via WhatsApp
-            </motion.a>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/25"
-            >
-              Hubungi Kami
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </motion.div>
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <motion.a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#25D366] text-[#030712] font-bold text-sm rounded-2xl hover:bg-[#20bd5a] transition-all shadow-[0_0_30px_rgba(37,211,102,0.35)]"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <MessageCircle className="w-5 h-5 fill-[#030712]" />
+                Konsultasi WhatsApp Sekarang
+              </motion.a>
+              <a
+                href="#contact"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 text-white font-semibold text-sm rounded-2xl hover:bg-white/10 border border-white/15 backdrop-blur-md transition-all"
+              >
+                Isi Form Kontak
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
