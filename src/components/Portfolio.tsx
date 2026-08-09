@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowUpRight, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
 const products = [
@@ -18,7 +18,7 @@ const products = [
     external: true,
   },
   {
-    image: "/atcs-dashboard.png",
+    image: "/atcs-dashboard.webp",
     badge: "Smart City & Traffic Control",
     name: "BALI COMMAND CENTER ATCS",
     description:
@@ -29,7 +29,7 @@ const products = [
     external: true,
   },
   {
-    image: "/asset-management.png",
+    image: "/asset-management.webp",
     badge: "Enterprise Resource Management",
     name: "Enterprise Asset Management",
     description:
@@ -40,7 +40,7 @@ const products = [
     external: false,
   },
   {
-    image: "/ulasduk-app.png",
+    image: "/ulasduk-app.webp",
     badge: "Healthcare & Hospital SaaS",
     name: "UlasDuk (Ulasan Dinas Kependudukan & Pencatatan Sipil Kab. Badung",
     description:
@@ -117,11 +117,11 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="section-padding bg-[#030712] relative overflow-hidden">
       {/* Background Ambient Halo */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#00c4b4]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#00c4b4]/10 rounded-full blur-[40px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header with Adaptive Controls */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -166,7 +166,7 @@ export default function Portfolio() {
               </div>
             </div>
           )}
-        </motion.div>
+        </m.div>
 
         {/* Portfolio Cards Container */}
         {isCarousel ? (
@@ -177,7 +177,7 @@ export default function Portfolio() {
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {products.map((p, idx) => (
-              <motion.div
+              <m.div
                 key={p.name + idx}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -196,7 +196,7 @@ export default function Portfolio() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent opacity-80" />
 
-                  <span className="absolute top-4 left-4 text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full bg-[#030712]/80 backdrop-blur-md text-[#38bdf8] border border-white/10">
+                  <span className="absolute top-4 left-4 text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full bg-[#030712]/80 text-[#38bdf8] border border-white/10">
                     {p.badge}
                   </span>
                 </div>
@@ -241,12 +241,12 @@ export default function Portfolio() {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         ) : (
           /* Standard Grid Layout (<= 3 Items) */
-          <motion.div
+          <m.div
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
@@ -254,7 +254,7 @@ export default function Portfolio() {
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {products.map((p) => (
-              <motion.div
+              <m.div
                 key={p.name}
                 variants={itemVariants}
                 className="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group relative"
@@ -270,7 +270,7 @@ export default function Portfolio() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent opacity-80" />
 
-                  <span className="absolute top-4 left-4 text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full bg-[#030712]/80 backdrop-blur-md text-[#38bdf8] border border-white/10">
+                  <span className="absolute top-4 left-4 text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full bg-[#030712]/80 text-[#38bdf8] border border-white/10">
                     {p.badge}
                   </span>
                 </div>
@@ -315,9 +315,9 @@ export default function Portfolio() {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         )}
 
         {/* Carousel Bottom Progress Indicator */}

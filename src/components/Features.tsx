@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   FileText,
   CalendarCheck,
@@ -23,7 +23,7 @@ export default function Features() {
       style={{ backgroundColor: "#ffffff" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -42,13 +42,13 @@ export default function Features() {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {t.features.subheading}
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {t.features.items.map((item, index) => {
             const Icon = icons[index];
             return (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ export default function Features() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

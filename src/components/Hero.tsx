@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, ChevronDown, Sparkles, CheckCircle2 } from "lucide-react";
 
 const stats = [
@@ -19,22 +19,22 @@ export default function Hero() {
     >
       {/* Dynamic Background Spotlights & Noise Mesh */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-[#00c4b4]/20 via-[#38bdf8]/15 to-transparent rounded-full blur-[120px]" />
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#0b1329]/60 rounded-full blur-[140px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-[#00c4b4]/20 via-[#38bdf8]/15 to-transparent rounded-full blur-[40px]" />
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#0b1329]/60 rounded-full blur-[40px]" />
         <div className="absolute inset-0 bg-grid-pattern opacity-40" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Hero Copy */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
             className="lg:col-span-7 text-center lg:text-left"
           >
             {/* Live Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-[#38bdf8] text-xs font-medium mb-6 hover:border-[#00c4b4]/40 transition-colors">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[#38bdf8] text-xs font-medium mb-6 hover:border-[#00c4b4]/40 transition-colors">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00c4b4] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00c4b4]"></span>
@@ -64,7 +64,7 @@ export default function Hero() {
               </a>
               <a
                 href="#portfolio"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 bg-white/5 text-gray-200 hover:text-white font-semibold text-sm rounded-2xl hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 bg-white/5 text-gray-200 hover:text-white font-semibold text-sm rounded-2xl hover:bg-white/10 border border-white/10 transition-all duration-200"
               >
                 Jelajahi Portofolio
               </a>
@@ -81,17 +81,17 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right Floating Image & Glass Cards */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
             className="lg:col-span-5 relative hidden lg:block"
           >
             {/* Ambient Backlight Halo */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#00c4b4]/30 to-[#38bdf8]/20 rounded-3xl blur-3xl scale-95" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#00c4b4]/30 to-[#38bdf8]/20 rounded-3xl blur-xl scale-95" />
 
             {/* Hero Main Mockup Frame */}
             <div className="relative rounded-3xl overflow-hidden glass-card p-2 border border-white/15 shadow-2xl">
@@ -109,11 +109,11 @@ export default function Hero() {
             </div>
 
             {/* Floating Glass Badges */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -20, y: 20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="absolute -bottom-6 -left-6 glass-card p-4 rounded-2xl border border-white/15 shadow-2xl flex items-center gap-3 backdrop-blur-2xl"
+              className="absolute -bottom-6 -left-6 bg-[#0b1329]/95 p-4 rounded-2xl border border-white/15 shadow-2xl flex items-center gap-3"
             >
               <div className="w-10 h-10 rounded-xl bg-[#00c4b4]/20 border border-[#00c4b4]/30 flex items-center justify-center text-[#00c4b4]">
                 <CheckCircle2 className="w-5 h-5" />
@@ -122,13 +122,13 @@ export default function Hero() {
                 <p className="text-xs font-semibold text-white">Enterprise Scalable</p>
                 <p className="text-[11px] text-gray-400">Arsitektur Teruji & Safe</p>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         </div>
       </div>
 
       {/* Subtle Scroll Indicator */}
-      <motion.a
+      <m.a
         href="#services"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -139,7 +139,7 @@ export default function Hero() {
           Jelajahi
         </span>
         <ChevronDown className="w-4 h-4 animate-bounce text-[#00c4b4]" />
-      </motion.a>
+      </m.a>
     </section>
   );
 }

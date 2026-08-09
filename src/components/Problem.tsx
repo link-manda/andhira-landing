@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Clock, Database, FileBarChart } from "lucide-react";
 import { useLang } from "@/context/LangContext";
 
@@ -12,7 +12,7 @@ export default function Problem() {
   return (
     <section id="problem" className="py-20 lg:py-28" style={{ backgroundColor: "#f8fafc" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -25,13 +25,13 @@ export default function Problem() {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {t.problem.subheading}
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.problem.items.map((item, index) => {
             const Icon = icons[index];
             return (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export default function Problem() {
                   className="absolute top-0 right-0 w-24 h-24 rounded-full opacity-0 group-hover:opacity-5 transition-opacity duration-300 -z-0"
                   style={{ backgroundColor: "#00A8A8", transform: "translate(30%, -30%)" }}
                 />
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

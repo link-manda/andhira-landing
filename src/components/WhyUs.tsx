@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Users, Cpu, TrendingUp, Handshake, ShieldCheck } from "lucide-react";
 
 const reasons = [
@@ -62,11 +62,11 @@ export default function WhyUs() {
   return (
     <section className="section-padding bg-[#070e1b] relative overflow-hidden">
       {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[450px] h-[450px] bg-[#38bdf8]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[450px] h-[450px] bg-[#38bdf8]/10 rounded-full blur-[40px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -82,10 +82,10 @@ export default function WhyUs() {
           <p className="text-gray-400 max-w-xl mx-auto text-base sm:text-lg">
             Kami bertindak sebagai mitra teknis yang mendampingi perencanaan arsitektur hingga pemeliharaan jangka panjang.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Grid */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -96,7 +96,7 @@ export default function WhyUs() {
             const Icon = r.icon;
             const isLast = idx === reasons.length - 1;
             return (
-              <motion.div
+              <m.div
                 key={r.title}
                 variants={itemVariants}
                 className={`glass-card glass-card-hover rounded-3xl p-7 flex flex-col justify-between group relative ${
@@ -121,10 +121,10 @@ export default function WhyUs() {
                     {r.description}
                   </p>
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

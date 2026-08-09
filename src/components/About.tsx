@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CheckCircle2, Shield } from "lucide-react";
 
 const highlights = [
@@ -16,12 +16,12 @@ export default function About() {
   return (
     <section id="about" className="section-padding bg-[#030712] relative overflow-hidden">
       {/* Ambient Glow */}
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-[#00c4b4]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-[#00c4b4]/10 rounded-full blur-[40px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Glass Framed Image */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -42,12 +42,12 @@ export default function About() {
             </div>
 
             {/* Floating Glass Badge */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.9, y: 15 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="absolute -bottom-6 -right-6 glass-card p-4 rounded-2xl border border-white/20 shadow-2xl flex items-center gap-3 backdrop-blur-2xl"
+              className="absolute -bottom-6 -right-6 bg-[#0b1329]/95 p-4 rounded-2xl border border-white/20 shadow-2xl flex items-center gap-3"
             >
               <div className="w-10 h-10 bg-gradient-to-tr from-[#00c4b4] to-[#38bdf8] rounded-xl flex items-center justify-center text-[#030712] shrink-0 font-bold">
                 <Shield className="w-5 h-5" />
@@ -60,11 +60,11 @@ export default function About() {
                   Solusi IT Handal & Aman
                 </p>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Right: Text Copy */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -95,7 +95,7 @@ export default function About() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

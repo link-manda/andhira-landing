@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 
 const WA_NUMBER = "62895623318351";
@@ -15,9 +15,9 @@ export default function CTA() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="glass-card rounded-3xl p-8 sm:p-14 border border-white/15 relative overflow-hidden text-center shadow-2xl">
           {/* Ambient Glow Elements */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-[#00c4b4]/20 via-[#38bdf8]/15 to-transparent rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-[#00c4b4]/20 via-[#38bdf8]/15 to-transparent rounded-full blur-[40px] pointer-events-none" />
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -40,7 +40,7 @@ export default function CTA() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <motion.a
+              <m.a
                 href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -50,16 +50,16 @@ export default function CTA() {
               >
                 <MessageCircle className="w-5 h-5 fill-[#030712]" />
                 Konsultasi WhatsApp Sekarang
-              </motion.a>
+              </m.a>
               <a
                 href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 text-white font-semibold text-sm rounded-2xl hover:bg-white/10 border border-white/15 backdrop-blur-md transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 text-white font-semibold text-sm rounded-2xl hover:bg-white/10 border border-white/15 transition-all"
               >
                 Isi Form Kontak
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

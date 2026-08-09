@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Mail, MessageSquare, Instagram, Globe, MapPin, CheckCircle2 } from "lucide-react";
 
 const contactItems = [
@@ -62,12 +62,12 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding bg-[#070e1b] relative overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[450px] h-[450px] bg-[#00c4b4]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[450px] h-[450px] bg-[#00c4b4]/10 rounded-full blur-[40px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Heading Column */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -99,10 +99,10 @@ export default function Contact() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right Cards Column */}
-          <motion.div
+          <m.div
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
@@ -112,7 +112,7 @@ export default function Contact() {
             {contactItems.map((c) => {
               const Icon = c.icon;
               return (
-                <motion.a
+                <m.a
                   key={c.label}
                   variants={itemVariants}
                   href={c.href}
@@ -131,10 +131,10 @@ export default function Contact() {
                       {c.value}
                     </p>
                   </div>
-                </motion.a>
+                </m.a>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { useLang } from "@/context/LangContext";
 
@@ -14,7 +14,7 @@ export default function Benefits() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text side */}
           <div>
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -29,11 +29,11 @@ export default function Benefits() {
               <p className="text-lg text-slate-600 mb-10 leading-relaxed">
                 {t.benefits.subheading}
               </p>
-            </motion.div>
+            </m.div>
 
             <div className="space-y-6">
               {t.benefits.items.map((item, index) => (
-                <motion.div
+                <m.div
                   key={index}
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -57,12 +57,12 @@ export default function Benefits() {
                     </h3>
                     <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
 
             {/* Decorator number */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -74,11 +74,11 @@ export default function Benefits() {
                 Dipercaya oleh 500+ klinik di Indonesia
               </span>
               <div className="h-px flex-1" style={{ backgroundColor: "#e2e8f0" }} />
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Image side */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -106,7 +106,7 @@ export default function Benefits() {
             </div>
 
             {/* Floating stat card */}
-            <motion.div
+            <m.div
               animate={{ y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-5 py-4"
@@ -116,8 +116,8 @@ export default function Benefits() {
                 98%
               </p>
               <p className="text-xs text-slate-500 font-medium">Tingkat Kepuasan Pengguna</p>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         </div>
       </div>
     </section>

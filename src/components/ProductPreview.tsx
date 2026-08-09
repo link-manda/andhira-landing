@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useLang } from "@/context/LangContext";
 
 export default function ProductPreview() {
@@ -15,7 +15,7 @@ export default function ProductPreview() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -28,12 +28,12 @@ export default function ProductPreview() {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {t.product.subheading}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Mockup layout */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
           {/* Laptop mockup — 3/5 */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -68,10 +68,10 @@ export default function ProductPreview() {
                 />
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Phone mockup + Badges — 2/5 */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -106,7 +106,7 @@ export default function ProductPreview() {
             {/* Feature badges */}
             <div className="flex flex-col gap-3 w-full">
               {t.product.badges.map((badge, index) => (
-                <motion.div
+                <m.div
                   key={badge}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -122,10 +122,10 @@ export default function ProductPreview() {
                   <span className="text-sm font-semibold" style={{ color: "#0B3C5D" }}>
                     {badge}
                   </span>
-                </motion.div>
+                </m.div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

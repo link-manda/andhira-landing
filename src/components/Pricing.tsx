@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Check } from "lucide-react";
 import { useLang } from "@/context/LangContext";
 
@@ -14,7 +14,7 @@ export default function Pricing() {
       style={{ backgroundColor: "#f8fafc" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -27,13 +27,13 @@ export default function Pricing() {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {t.pricing.subheading}
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
           {t.pricing.tiers.map((tier, index) => {
             const isPopular = index === 1;
             return (
-              <motion.div
+              <m.div
                 key={tier.name}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -111,12 +111,12 @@ export default function Pricing() {
                 >
                   {t.pricing.cta}
                 </a>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>
 
-        <motion.p
+        <m.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -127,7 +127,7 @@ export default function Pricing() {
           <a href="#contact" className="font-semibold underline" style={{ color: "#00A8A8" }}>
             Hubungi tim kami.
           </a>
-        </motion.p>
+        </m.p>
       </div>
     </section>
   );

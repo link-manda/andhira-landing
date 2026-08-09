@@ -1,3 +1,6 @@
+"use client";
+
+import { LazyMotion, domAnimation } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -10,16 +13,18 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <Services />
-      <Portfolio />
-      <WhyUs />
-      <About />
-      <CTA />
-      <Contact />
-      <Footer />
-    </main>
+    <LazyMotion features={domAnimation}>
+      <main>
+        <Navbar />
+        <Hero />
+        <Services />
+        <Portfolio />
+        <WhyUs />
+        <About />
+        <CTA />
+        <Contact />
+        <Footer />
+      </main>
+    </LazyMotion>
   );
 }

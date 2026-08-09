@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   Database,
   Globe,
@@ -89,11 +89,11 @@ export default function Services() {
   return (
     <section id="services" className="section-padding bg-[#030712] relative overflow-hidden">
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#00c4b4]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#00c4b4]/10 rounded-full blur-[40px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -109,10 +109,10 @@ export default function Services() {
           <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
             Kami bangun sistem operasional yang spesifik untuk memangkas tugas berulang dan meningkatkan akurasi data tim Anda.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Bento Grid */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -122,7 +122,7 @@ export default function Services() {
           {services.map((svc) => {
             const Icon = svc.icon;
             return (
-              <motion.div
+              <m.div
                 key={svc.title}
                 variants={itemVariants}
                 className={`glass-card glass-card-hover rounded-3xl p-8 flex flex-col justify-between group relative overflow-hidden ${svc.colSpan}`}
@@ -155,10 +155,10 @@ export default function Services() {
                   <span>Konsultasi Fitur Ini</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

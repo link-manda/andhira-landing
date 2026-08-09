@@ -27,7 +27,7 @@ export default function Navbar() {
       <nav
         className={`max-w-7xl mx-auto rounded-2xl transition-all duration-300 ${
           scrolled
-            ? "glass-nav bg-[#030712]/80 backdrop-blur-xl border border-white/10 shadow-2xl py-3 px-4 sm:px-6"
+            ? "bg-[#030712]/95 border border-white/10 shadow-2xl py-3 px-4 sm:px-6"
             : "bg-transparent py-4 px-4 sm:px-6"
         }`}
       >
@@ -51,7 +51,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-1 bg-white/5 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
+          <div className="hidden md:flex items-center gap-1 bg-white/5 p-1.5 rounded-full border border-white/10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -87,7 +87,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Drawer */}
         {menuOpen && (
-          <div className="md:hidden mt-3 p-4 bg-[#0b1329]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl flex flex-col gap-2 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="md:hidden mt-3 p-4 bg-[#0b1329] border border-white/10 rounded-2xl shadow-2xl flex flex-col gap-2 animate-in fade-in slide-in-from-top-2 duration-200">
             {navLinks.map((link) => (
               <a
                 key={link.href}
