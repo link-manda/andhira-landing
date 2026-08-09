@@ -42,13 +42,13 @@ const products = [
   {
     image: "/ulasduk-app.webp",
     badge: "Healthcare & Hospital SaaS",
-    name: "UlasDuk (Ulasan Dinas Kependudukan & Pencatatan Sipil Kab. Badung",
+    name: "UlasDuk (Ulasan Dinas Kependudukan & Pencatatan Sipil Kab. Badung)",
     description:
       "Platform online publik berbasis web yang dirancang agar masyarakat dapat memberikan ulasan (rating dan komentar) terkait pelayanan Dukcapil dengan mudah, cepat, dan transparan.",
     tags: ["Government SaaS", "Public Feedback"],
     cta: "Buka UlasDuk",
     href: "https://ulasduk.andhira-tech.web.id/",
-    external: false,
+    external: true,
   },
 ];
 
