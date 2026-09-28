@@ -7,12 +7,12 @@ import { ArrowUpRight, ExternalLink, ChevronLeft, ChevronRight } from "lucide-re
 
 const products = [
   {
-    image: "/si-prima-dashboard.webp",
+    image: "/siprima-dashboard.webp",
     badge: "Sistem Informasi Klinik",
     name: "SI-PRIMA",
     description:
-      "Platform Sistem Informasi Klinik modern untuk manajemen pasien, rekam medis digital (EMR), dan operasional pelayanan kesehatan terpadu.",
-    tags: ["Healthcare IT", "SaaS", "Rekam Medis Digital"],
+      "Sistem informasi klinik terpadu untuk percepatan tata kelola rekam medis elektronik (RME), alur antrean pasien, farmasi, serta integrasi standar SatuSehat Kemenkes RI.",
+    tags: ["Healthcare SaaS", "RME Terintegrasi", "Kemenkes SatuSehat"],
     cta: "Kunjungi SI-PRIMA",
     href: "https://si-prima.id",
     external: true,
@@ -22,33 +22,44 @@ const products = [
     badge: "Smart City & Traffic Control",
     name: "BALI COMMAND CENTER ATCS",
     description:
-      "Platform command center Area Traffic Control System Provinsi Bali — pemantauan 255 CCTV real-time, peta interaktif, dan analitik data 8 wilayah.",
-    tags: ["Smart City", "ATCS", "Real-time Monitoring"],
+      "Pusat kendali lalu lintas terintegrasi untuk pemantauan 255 titik kamera CCTV secara langsung, pemetaan visual interaktif, dan analitik kepadatan jalan di 8 wilayah Bali.",
+    tags: ["Smart City", "ATCS Real-Time", "Surveillance Analytics"],
     cta: "Buka Live Portal",
     href: "https://atcs.andhira-tech.my.id/",
     external: true,
   },
   {
-    image: "/asset-management.webp",
+    image: "/asset-management-mac.webp",
     badge: "Enterprise Resource Management",
     name: "Enterprise Asset Management",
     description:
-      "Sistem pengelolaan siklus hidup aset perusahaan — pelacakan katalog master, audit unit fisik, distribusi, hingga otomatisasi penyusutan nilai aset.",
-    tags: ["Asset Lifecycle", "Enterprise", "RBAC Security"],
+      "Platform tata kelola siklus hidup aset korporasi mulai dari inventarisasi katalog master, audit unit barcode fisik, mutasi alokasi, hingga kalkulasi depresiasi nilai buku otomatis.",
+    tags: ["Asset Lifecycle", "Audit & Depresiasi", "Enterprise Security"],
     cta: "Detail Platform",
     href: "#contact",
     external: false,
   },
   {
     image: "/ulasduk-app.webp",
-    badge: "Healthcare & Hospital SaaS",
-    name: "UlasDuk (Ulasan Dinas Kependudukan & Pencatatan Sipil Kab. Badung)",
+    badge: "Government & Public Service",
+    name: "UlasDuk (Ulasan Disdukcapil Kab. Badung)",
     description:
-      "Platform online publik berbasis web yang dirancang agar masyarakat dapat memberikan ulasan (rating dan komentar) terkait pelayanan Dukcapil dengan mudah, cepat, dan transparan.",
-    tags: ["Government SaaS", "Public Feedback"],
+      "Portal aspirasi publik bagi masyarakat Kabupaten Badung untuk menyampaikan evaluasi kepuasan layanan administrasi kependudukan secara transparan dengan analitik performa instansi.",
+    tags: ["Smart Governance", "Public Feedback", "Dashboard Analitik"],
     cta: "Buka UlasDuk",
     href: "https://ulasduk.andhira-tech.web.id/",
     external: true,
+  },
+  {
+    image: "/finapp-ai-poster.webp",
+    badge: "Financial Technology",
+    name: "FinApp-AI",
+    description:
+      "Aplikasi finansial personal mobile PWA dengan integrasi AI Vision untuk ekstraksi struk pengeluaran instan, sinkronisasi cloud Google Sheets, dan visualisasi arus kas harian.",
+    tags: ["FinTech", "AI Vision Extractor", "Mobile PWA"],
+    cta: "Lihat Detail Produk",
+    href: "#contact",
+    external: false,
   },
 ];
 
@@ -186,7 +197,7 @@ export default function Portfolio() {
                 className="w-[88%] sm:w-[48%] lg:w-[31%] shrink-0 snap-start glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group relative"
               >
                 {/* Media Preview Frame */}
-                <div className="relative aspect-[16/10] bg-[#0b1329] overflow-hidden">
+                <div className="relative aspect-[4/5] bg-[#0b1329] overflow-hidden">
                   <Image
                     src={p.image}
                     alt={p.name}
@@ -260,7 +271,7 @@ export default function Portfolio() {
                 className="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group relative"
               >
                 {/* Media Preview Frame */}
-                <div className="relative aspect-[16/10] bg-[#0b1329] overflow-hidden">
+                <div className="relative aspect-[4/5] bg-[#0b1329] overflow-hidden">
                   <Image
                     src={p.image}
                     alt={p.name}

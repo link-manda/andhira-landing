@@ -19,7 +19,7 @@ export const content = {
       ctaPrimary: "Konsultasi Gratis",
       ctaSecondary: "Jelajahi Portofolio",
       imageAlt:
-        "Dashboard SI-PRIMA — sistem informasi klinik terpadu",
+        "Dashboard SI-PRIMA, sistem informasi klinik terpadu",
       tagline: "Rekayasa Perangkat Lunak Enterprise",
     },
     problem: {
